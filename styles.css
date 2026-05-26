@@ -4,12 +4,16 @@
   font-style: normal;
 }
 
-.roboto-light, .section-description-text {
+.roboto-light, .banner-heading-text, .section-description-text {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
   font-variation-settings: "wdth" 100;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,8 +22,8 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 4fr 1fr 1fr;
-  grid-template-columns: auto;
+  grid-template-rows: 1fr 3fr 0.5fr;
+  grid-template-columns: 1fr;
   min-height: 100vh;
   background: #000000;
   color: #FFFFFF;
@@ -52,6 +56,24 @@ body {
   padding-right: 10px;
 }
 
+.contact-button {
+  width: clamp(200px, 23vw, 450px);
+  justify-self: center;
+  font-size: 2rem;
+  background: transparent;
+  border: 3px solid #bac3ca;
+  color: #bac3ca;
+  text-align: center;
+  border-radius: 3px;
+  color: #bac3ca;
+  text-decoration: none;
+}
+.contact-button:hover {
+  background: #bac3ca;
+  color: #000000;
+  transition: ease-in 0.2s;
+}
+
 .left-aside {
   grid-row-start: 2;
   grid-column-start: 1;
@@ -63,9 +85,8 @@ body {
 
 .hero-banner {
   display: grid;
-  grid-column-start: 2;
+  grid-template-rows: 1fr 150px 100px 80px;
   justify-self: center;
-  min-height: 500px;
   align-items: center;
 }
 
@@ -80,7 +101,7 @@ body {
   align-self: end;
   font-size: clamp(27px, 4.1vw, 60px);
   font-weight: bolder;
-  background-color: rgba(0, 0, 0, 0.3137254902);
+  color: #000;
   margin: 0;
 }
 
@@ -93,7 +114,37 @@ body {
   padding: 0 16vw;
 }
 
-.stock-section {
+.banner-heading-text {
+  justify-self: center;
+  align-self: end;
+  font-size: clamp(27px, 4.1vw, 60px);
+  font-weight: bolder;
+  color: #000;
+  margin: 0;
+  color: #bac3ca;
+}
+
+.gallery-image {
+  width: 100%;
+}
+
+.gallery-image-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .gallery-image-section {
+    grid-template-columns: 1fr 1fr;
+  }
+  .container {
+    grid-template-rows: 1fr 6fr 1fr;
+  }
+}
+.galley-section {
   display: grid;
   grid-column-end: span 2;
   align-content: start;
@@ -101,7 +152,7 @@ body {
   padding: 10px;
   background-color: #bac3ca;
 }
-.stock-section h1, .stock-section h2 {
+.galley-section h1, .galley-section h2 {
   align-self: start;
   color: #000000;
   background-color: unset;
@@ -119,21 +170,40 @@ body {
 
 .contact-section {
   display: grid;
-  grid-template-columns: 30px 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-items: center;
-  justify-content: start;
-  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
-.contact-section h2, .contact-section a {
+.contact-section h2, .contact-section a, .contact-section p {
   padding: 0px 10px;
   justify-self: start;
   background-color: unset;
   text-decoration: none;
+  color: #000;
 }
 .contact-section a:link, .contact-section a:visited {
   color: #000000;
 }
+.contact-section .email-section {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+  justify-items: center;
+  justify-content: start;
+  align-items: center;
+  row-gap: 10px;
+}
+.contact-section .contact-text {
+  justify-self: center;
+  padding: 0 10px;
+}
+.contact-section .contact-text-description {
+  justify-self: center;
+  font-size: 10px;
+}
 
 .icon {
   width: clamp(16px, 2vw, 30px);
+  justify-self: end;
 }/*# sourceMappingURL=styles.css.map */
